@@ -127,7 +127,9 @@ const extractCheckedLevels = (text: string): { checkedLevels: string[]; allLevel
     const match = line.match(/^[☑✓√]\s*(.+)$/)
     if (match) {
       const label = match[1].trim()
-      checkedLevels.push(label)
+      if (checkedLevels.length === 0) {
+        checkedLevels.push(label)
+      }
       allLevels.push(label)
     } else {
       const unchecked = line.match(/^□\s*(.+)$/)
