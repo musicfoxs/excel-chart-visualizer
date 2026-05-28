@@ -84,18 +84,49 @@ const getGridSpan = (tc: Element): number => {
 
 /**
  * 从评价等级单元格的文本中提取勾选项。
- * 正则匹配 ☑/✓/√ 后跟的等级标签文本。
+ * Word XML 中 ☑/□ 和等级文本可能在不同 <w:p> 段落或 <w:t> 节点中，
+ * 因此先预处理：合并单独的勾选符号行和被拆分的等级文本行。
  */
 const extractCheckedLevels = (text: string): { checkedLevels: string[]; allLevels: string[] } => {
   const checkedLevels: string[] = []
   const allLevels: string[] = []
 
-  const lines = text.split(/\n/).map(l => l.trim()).filter(Boolean)
+  const rawLines = text.split(/\n/).map(l => l.trim()).filter(Boolean)
 
-  for (const line of lines) {
-    const match = line.match(/^(☑|✓|√)\s*(.+)$/)
+  // Pass 1: ["☑", " 中频（3-4次）"] → ["☑ 中频（3-4次）"]
+  const pass1: string[] = []
+  for (let i = 0; i < rawLines.length; i++) {
+    const line = rawLines[i]
+    if (/^[☑✓√□]$/.test(line) && i + 1 < rawLines.length) {
+      pass1.push(line + ' ' + rawLines[i + 1])
+      i++
+    } else {
+      pass1.push(line)
+    }
+  }
+
+  // Pass 2: ["□ 熟练运用（≥5次", "正确）"] → ["□ 熟练运用（≥5次正确）"]
+  const labelEndPattern = /[）)）]$/,
+    nonBoxStart = /^[^☑✓√□]/
+  const mergedLines: string[] = []
+  for (let i = 0; i < pass1.length; i++) {
+    if (
+      i + 1 < pass1.length &&
+      /^[☑✓√□]/.test(pass1[i]) &&
+      !labelEndPattern.test(pass1[i]) &&
+      nonBoxStart.test(pass1[i + 1])
+    ) {
+      mergedLines.push(pass1[i] + pass1[i + 1])
+      i++
+    } else {
+      mergedLines.push(pass1[i])
+    }
+  }
+
+  for (const line of mergedLines) {
+    const match = line.match(/^[☑✓√]\s*(.+)$/)
     if (match) {
-      const label = match[2].trim()
+      const label = match[1].trim()
       checkedLevels.push(label)
       allLevels.push(label)
     } else {
@@ -192,8 +223,8 @@ const parseTable = (body: Element, filename: string, group: GroupType): ParsedDo
       }
     }
 
-    const indicatorName = col2Text.trim()
-    const indicatorContent = col3Text.trim()
+    const indicatorName = col2Text.replace(/\n/g, '').trim()
+    const indicatorContent = col3Text.replace(/\n/g, '').trim()
 
     if (!indicatorName || !currentModule) continue
 
