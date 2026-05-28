@@ -11,10 +11,10 @@
 
 ## Wave 3: UI 组件层（粒子 + 上传 + 卡片 + 标题）
 
-- [ ] 3.1 [M] 实现 ParticleBackground.vue 粒子动画背景组件
-- [ ] 3.2 [M] 实现 FileUpload.vue 拖拽上传组件
-- [ ] 3.3 [M] 实现 ChartCard.vue 毛玻璃卡片 + ECharts 实例组件
-- [ ] 3.4 [S] 实现 NeonTitle.vue 霓虹发光标题组件
+- [x] 3.1 [M] 实现 ParticleBackground.vue 粒子动画背景组件 <!-- time: started=2026-05-28T08:15:46.995Z, completed=2026-05-28T08:22:15.474Z, duration=388s -->
+- [x] 3.2 [M] 实现 FileUpload.vue 拖拽上传组件 <!-- time: started=2026-05-28T08:15:46.995Z, completed=2026-05-28T08:22:15.474Z, duration=388s -->
+- [x] 3.3 [M] 实现 ChartCard.vue 毛玻璃卡片 + ECharts 实例组件 <!-- time: started=2026-05-28T08:15:46.995Z, completed=2026-05-28T08:22:15.474Z, duration=388s -->
+- [x] 3.4 [S] 实现 NeonTitle.vue 霓虹发光标题组件 <!-- time: started=2026-05-28T08:15:46.995Z, completed=2026-05-28T08:22:15.474Z, duration=388s -->
 
 ## Wave 4: 集成组装与部署配置
 

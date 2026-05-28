@@ -5,7 +5,7 @@
     "lifecycle": "executing",
     "active_agent": "openspec-executor",
     "created_at": "2026-05-28T07:33:24.662Z",
-    "updated_at": "2026-05-28T08:14:20.746Z",
+    "updated_at": "2026-05-28T08:22:15.514Z",
     "worktree_path": null
   },
   "planner": {
@@ -87,44 +87,44 @@
         "wave": 3,
         "size": "M",
         "title": "实现 ParticleBackground.vue 粒子动画背景组件",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:15:46.995Z",
+        "completed_at": "2026-05-28T08:22:15.474Z",
+        "duration_ms": 388479,
+        "commit_hash": "16994ab"
       },
       {
         "task_id": "3.2",
         "wave": 3,
         "size": "M",
         "title": "实现 FileUpload.vue 拖拽上传组件",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:15:46.995Z",
+        "completed_at": "2026-05-28T08:22:15.474Z",
+        "duration_ms": 388479,
+        "commit_hash": "16994ab"
       },
       {
         "task_id": "3.3",
         "wave": 3,
         "size": "M",
         "title": "实现 ChartCard.vue 毛玻璃卡片 + ECharts 实例组件",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:15:46.995Z",
+        "completed_at": "2026-05-28T08:22:15.474Z",
+        "duration_ms": 388479,
+        "commit_hash": "16994ab"
       },
       {
         "task_id": "3.4",
         "wave": 3,
         "size": "S",
         "title": "实现 NeonTitle.vue 霓虹发光标题组件",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:15:46.995Z",
+        "completed_at": "2026-05-28T08:22:15.474Z",
+        "duration_ms": 388479,
+        "commit_hash": "16994ab"
       },
       {
         "task_id": "4.1",
@@ -243,13 +243,13 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T08:14:20.746Z"
+      "last_rendered_at": "2026-05-28T08:22:15.514Z"
     },
     "execution_summary": {
-      "current_wave": 3,
+      "current_wave": 4,
       "current_task": null,
       "total_tasks": 15,
-      "completed_tasks": 5,
+      "completed_tasks": 9,
       "status": "in-progress",
       "awaiting_user_review": false,
       "awaiting_user_approval": false,
