@@ -107,7 +107,7 @@ const handleTabChange = (tabId: TabId) => {
           @tab-change="handleTabChange"
         />
 
-        <div v-if="hasData && currentChartBlock" class="chart-grid">
+        <div v-if="hasData && currentChartBlock" :class="['chart-grid', { 'chart-grid--single': activeTab === 'overall' }]">
           <ChartCard
             v-for="indicator in currentChartBlock.indicators"
             :key="indicator.name"
@@ -150,6 +150,10 @@ const handleTabChange = (tabId: TabId) => {
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin-top: 24px;
+}
+
+.chart-grid--single {
+  grid-template-columns: 1fr;
 }
 
 .empty-state {

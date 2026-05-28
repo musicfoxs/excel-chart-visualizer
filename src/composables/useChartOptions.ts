@@ -24,73 +24,71 @@ export function useChartOptions() {
       { offset: 1, color: '#fb923c' }
     ])
 
-    return {
-      backgroundColor: 'transparent',
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          type: 'shadow'
-        },
-        // 毛玻璃样式
-        extraCssText: `
-          backdrop-filter: blur(12px);
-          background: rgba(0, 0, 0, 0.6);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 8px;
-          padding: 10px 14px;
-        `
+  const isOverall = indicator.labels.length <= 3
+
+  return {
+    backgroundColor: 'transparent',
+    tooltip: {
+      trigger: 'axis',
+      axisPointer: {
+        type: 'shadow'
       },
-      legend: {
-        data: ['传统组', '创新组'],
-        top: 0,
-        textStyle: {
-          color: 'rgba(255, 255, 255, 0.7)'
+      extraCssText: `
+        backdrop-filter: blur(12px);
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 10px 14px;
+      `
+    },
+    legend: {
+      data: ['传统组', '创新组'],
+      top: 0,
+      textStyle: {
+        color: 'rgba(255, 255, 255, 0.7)'
+      }
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      top: 36,
+      bottom: isOverall ? 20 : 60,
+      containLabel: false
+    },
+    xAxis: {
+      type: 'category',
+      data: indicator.labels,
+      axisLine: {
+        lineStyle: {
+          color: 'rgba(255, 255, 255, 0.2)'
         }
       },
-      grid: {
-        left: '3%',
-        right: '4%',
-        top: 36,
-        bottom: 60,
-        containLabel: false
+      axisLabel: {
+        color: 'rgba(255, 255, 255, 0.7)',
+        ...(isOverall
+          ? { fontSize: 14, fontWeight: 'bold' }
+          : { rotate: 30, interval: 0, fontSize: 11, overflow: 'truncate' as const, width: 80, ellipsis: '...' })
       },
-      xAxis: {
-        type: 'category',
-        data: indicator.labels,
-        axisLine: {
-          lineStyle: {
-            color: 'rgba(255, 255, 255, 0.2)'
-          }
-        },
-        axisLabel: {
-          color: 'rgba(255, 255, 255, 0.7)',
-          rotate: 30,
-          interval: 0,
-          fontSize: 11,
-          overflow: 'truncate',
-          width: 80,
-          ellipsis: '...'
-        },
-        axisTick: {
-          alignWithLabel: true
+      axisTick: {
+        alignWithLabel: true
+      }
+    },
+    yAxis: {
+      type: 'value',
+      axisLine: {
+        lineStyle: {
+          color: 'rgba(255, 255, 255, 0.2)'
         }
       },
-      yAxis: {
-        type: 'value',
-        axisLine: {
-          lineStyle: {
-            color: 'rgba(255, 255, 255, 0.2)'
-          }
-        },
-        splitLine: {
-          lineStyle: {
-            color: 'rgba(255, 255, 255, 0.05)'
-          }
-        },
-        axisLabel: {
-          color: 'rgba(255, 255, 255, 0.7)'
+      splitLine: {
+        lineStyle: {
+          color: 'rgba(255, 255, 255, 0.05)'
         }
       },
+      axisLabel: {
+        color: 'rgba(255, 255, 255, 0.7)'
+      }
+    },
       animationEasing: 'elasticOut',
       series: [
         {

@@ -112,18 +112,41 @@ export function useStatAggregation() {
       })),
     }))
 
-  /** 将所有模块的所有 indicator 合并为单个 "总体对比" ChartBlock。 */
-  const toOverallChartBlock = (modules: AggregatedModule[]): ChartBlock => ({
-    title: '总体对比',
-    indicators: modules.flatMap((mod) =>
-      mod.indicators.map((ind) => ({
-        name: ind.indicatorName,
-        labels: ind.levelLabels,
-        innovative: ind.innovativeCounts,
-        traditional: ind.traditionalCounts,
-      }))
-    ),
-  })
+  const toOverallChartBlock = (modules: AggregatedModule[]): ChartBlock => {
+    const moduleLabels: string[] = []
+    const innovativeScores: number[] = []
+    const traditionalScores: number[] = []
+
+    for (const mod of modules) {
+      moduleLabels.push(mod.moduleName)
+      let innoTotal = 0, innoCount = 0
+      let tradTotal = 0, tradCount = 0
+
+      for (const ind of mod.indicators) {
+        const n = ind.levelLabels.length
+        for (let i = 0; i < n; i++) {
+          const score = n - i
+          innoTotal += score * ind.innovativeCounts[i]
+          innoCount += ind.innovativeCounts[i]
+          tradTotal += score * ind.traditionalCounts[i]
+          tradCount += ind.traditionalCounts[i]
+        }
+      }
+
+      innovativeScores.push(innoCount > 0 ? Math.round(innoTotal / innoCount * 100) / 100 : 0)
+      traditionalScores.push(tradCount > 0 ? Math.round(tradTotal / tradCount * 100) / 100 : 0)
+    }
+
+    return {
+      title: '总体对比',
+      indicators: [{
+        name: '加权平均分',
+        labels: moduleLabels,
+        innovative: innovativeScores,
+        traditional: traditionalScores,
+      }],
+    }
+  }
 
   return { aggregate, toChartBlocks, toOverallChartBlock }
 }
