@@ -23,7 +23,7 @@
 
 ## Wave 5: 最终验证
 
-- [ ] F1 [M] Artifacts Compliance Audit — 验证 AC1-AC8 全部通过（参考 design.md Verification → Acceptance Criteria）
-- [ ] F2 [M] Code Quality Review — typecheck + test + AI slop 检查
-- [ ] F3 [M] Integration QA — 执行 E2E 测试场景（参考 design.md Verification → E2E Test Design）
-- [ ] F4 [M] Scope Fidelity Check — 检查 Non-goals 边界未被违反（参考 design.md Verification → Boundary Verification）
+- [x] F1 [M] Artifacts Compliance Audit — 验证 AC1-AC8 全部通过（参考 design.md Verification → Acceptance Criteria） <!-- time: started=2026-05-28T08:27:11.340Z, completed=2026-05-28T08:33:48.342Z, duration=397s -->
+- [x] F2 [M] Code Quality Review — typecheck + test + AI slop 检查 <!-- time: started=2026-05-28T08:27:11.340Z, completed=2026-05-28T08:33:48.342Z, duration=397s -->
+- [x] F3 [M] Integration QA — 执行 E2E 测试场景（参考 design.md Verification → E2E Test Design） <!-- time: started=2026-05-28T08:27:11.340Z, completed=2026-05-28T08:33:48.342Z, duration=397s -->
+- [x] F4 [M] Scope Fidelity Check — 检查 Non-goals 边界未被违反（参考 design.md Verification → Boundary Verification） <!-- time: started=2026-05-28T08:27:11.340Z, completed=2026-05-28T08:33:48.342Z, duration=397s -->

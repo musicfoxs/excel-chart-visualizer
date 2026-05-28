@@ -5,7 +5,7 @@
     "lifecycle": "executing",
     "active_agent": "openspec-executor",
     "created_at": "2026-05-28T07:33:24.662Z",
-    "updated_at": "2026-05-28T08:26:37.921Z",
+    "updated_at": "2026-05-28T08:33:48.669Z",
     "worktree_path": null
   },
   "planner": {
@@ -153,44 +153,44 @@
         "wave": 5,
         "size": "M",
         "title": "Artifacts Compliance Audit — 验证 AC1-AC8 全部通过（参考 design.md Verification → Acceptance Criteria）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:27:11.340Z",
+        "completed_at": "2026-05-28T08:33:48.342Z",
+        "duration_ms": 397002,
+        "commit_hash": "703a0ed"
       },
       {
         "task_id": "F2",
         "wave": 5,
         "size": "M",
         "title": "Code Quality Review — typecheck + test + AI slop 检查",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:27:11.340Z",
+        "completed_at": "2026-05-28T08:33:48.342Z",
+        "duration_ms": 397002,
+        "commit_hash": "703a0ed"
       },
       {
         "task_id": "F3",
         "wave": 5,
         "size": "M",
         "title": "Integration QA — 执行 E2E 测试场景（参考 design.md Verification → E2E Test Design）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:27:11.340Z",
+        "completed_at": "2026-05-28T08:33:48.342Z",
+        "duration_ms": 397002,
+        "commit_hash": "703a0ed"
       },
       {
         "task_id": "F4",
         "wave": 5,
         "size": "M",
         "title": "Scope Fidelity Check — 检查 Non-goals 边界未被违反（参考 design.md Verification → Boundary Verification）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:27:11.340Z",
+        "completed_at": "2026-05-28T08:33:48.342Z",
+        "duration_ms": 397002,
+        "commit_hash": "703a0ed"
       }
     ],
     "waves": [
@@ -243,17 +243,17 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T08:26:37.921Z"
+      "last_rendered_at": "2026-05-28T08:33:48.420Z"
     },
     "execution_summary": {
-      "current_wave": 5,
+      "current_wave": null,
       "current_task": null,
       "total_tasks": 15,
-      "completed_tasks": 11,
-      "status": "in-progress",
+      "completed_tasks": 15,
+      "status": "change-complete",
       "awaiting_user_review": false,
-      "awaiting_user_approval": false,
-      "awaiting_approval_since": null,
+      "awaiting_user_approval": true,
+      "awaiting_approval_since": "2026-05-28T08:33:48.669Z",
       "idle_stop_until": null
     },
     "reviews": [],
