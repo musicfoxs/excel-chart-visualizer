@@ -100,24 +100,24 @@ const handleTabChange = (tabId: TabId) => {
         @files-selected="handleFilesSelected"
       />
 
-      <div v-if="hasData" class="data-section">
+      <div class="data-section">
         <TabBar
           :active-tab="activeTab"
-          :disabled="false"
+          :disabled="!hasData"
           @tab-change="handleTabChange"
         />
 
-        <div v-if="currentChartBlock" class="chart-grid">
+        <div v-if="hasData && currentChartBlock" class="chart-grid">
           <ChartCard
             v-for="indicator in currentChartBlock.indicators"
             :key="indicator.name"
             :indicator="indicator"
           />
         </div>
-      </div>
 
-      <div v-else class="empty-state">
-        <p>请上传 Word 评价量表文件（.docx 格式）</p>
+        <div v-else-if="!hasData" class="empty-state">
+          <p>请上传 Word 评价量表文件（.docx 格式）</p>
+        </div>
       </div>
     </main>
   </div>
