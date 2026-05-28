@@ -1,5 +1,5 @@
 import echarts from '@/echarts'
-import type { DataBlock } from '@/types'
+import type { ChartIndicator } from '@/types'
 
 /**
  * ECharts 图表配置生成器 composable
@@ -7,11 +7,11 @@ import type { DataBlock } from '@/types'
  */
 export function useChartOptions() {
   /**
-   * 根据 DataBlock 生成 ECharts option 对象
-   * @param block - 数据块，包含标题、标签和两组数据
+   * 根据 ChartIndicator 生成 ECharts option 对象
+   * @param indicator - 图表指标数据，包含名称、等级标签和两组数据
    * @returns ECharts 配置对象
    */
-  const generateOptions = (block: DataBlock): Record<string, unknown> => {
+  const generateIndicatorOptions = (indicator: ChartIndicator): Record<string, unknown> => {
     // 传统组渐变色：从底到顶 蓝色(#3b82f6) → 紫色(#a855f7)
     const traditionalGradient = new echarts.graphic.LinearGradient(0, 0, 0, 1, [
       { offset: 0, color: '#a855f7' },
@@ -56,7 +56,7 @@ export function useChartOptions() {
       },
       xAxis: {
         type: 'category',
-        data: block.labels,
+        data: indicator.labels,
         axisLine: {
           lineStyle: {
             color: 'rgba(255, 255, 255, 0.2)'
@@ -88,7 +88,7 @@ export function useChartOptions() {
           name: '传统组',
           type: 'bar',
           barGap: '30%',
-          data: block.traditional,
+          data: indicator.traditional,
           label: {
             show: true,
             position: 'top',
@@ -112,7 +112,7 @@ export function useChartOptions() {
         {
           name: '创新组',
           type: 'bar',
-          data: block.innovative,
+          data: indicator.innovative,
           label: {
             show: true,
             position: 'top',
@@ -138,6 +138,6 @@ export function useChartOptions() {
   }
 
   return {
-    generateOptions
+    generateIndicatorOptions
   }
 }

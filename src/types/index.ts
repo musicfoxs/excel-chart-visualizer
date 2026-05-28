@@ -1,37 +1,71 @@
-// 单个数据块的结构
-export interface DataBlock {
-  title: string          // 数据块标题，如 "主动参与情况 人数分布"
-  labels: string[]       // 分类标签，如 ["高频", "中频", "低频", "无"]
-  traditional: number[]  // 传统组数值
-  innovative: number[]   // 创新组数值
+// ===== Layer 1: 解析结果（per document）=====
+
+export interface ParsedDocument {
+  filename: string
+  group: 'innovative' | 'traditional'
+  modules: ParsedModule[]
 }
 
-// 图表系列数据
-export interface ChartSeries {
-  name: string
-  type: 'bar'
-  data: number[]
-  itemStyle: {
-    color: unknown  // LinearGradient 对象
-    shadowColor: string
-    shadowBlur: number
-    borderRadius: [number, number, number, number]  // 左上、右上、右下、左下圆角
-  }
+export interface ParsedModule {
+  name: string // "爱上阅读（阅读兴趣）"
+  indicators: ParsedIndicator[]
 }
 
-// 图表配置
-export interface ChartConfig {
+export interface ParsedIndicator {
+  name: string // "1.主动参与情况"
+  content: string // "主动举手、发言、提问"
+  checkedLevels: string[] // ["中频(3-4次)"]
+  allLevels: string[] // ["高频(>=5次)", "中频(3-4次)", ...]
+}
+
+// ===== Layer 2: 聚合结果（per module, across all documents）=====
+
+export interface AggregatedModule {
+  moduleName: string
+  indicators: AggregatedIndicator[]
+}
+
+export interface AggregatedIndicator {
+  indicatorName: string
+  levelLabels: string[]
+  innovativeCounts: number[] // 与 levelLabels 一一对应
+  traditionalCounts: number[]
+}
+
+// ===== Layer 3: 图表数据（ECharts-ready）=====
+
+export interface ChartBlock {
   title: string
-  labels: string[]
-  series: ChartSeries[]
+  indicators: ChartIndicator[]
 }
 
-// 解析状态
-export type ParseStatus = 'idle' | 'loading' | 'success' | 'error'
+export interface ChartIndicator {
+  name: string
+  labels: string[]
+  innovative: number[]
+  traditional: number[]
+}
 
-// 解析结果
-export interface ParseResult {
-  status: ParseStatus
-  data: DataBlock[]
-  error: string | null
+// ===== UI 状态 =====
+
+export type GroupType = 'innovative' | 'traditional'
+
+export type TabId = 'love-reading' | 'learn-reading' | 'individual-diff' | 'overall'
+
+export interface TabConfig {
+  id: TabId
+  label: string
+}
+
+export const TABS: TabConfig[] = [
+  { id: 'love-reading', label: '爱上阅读' },
+  { id: 'learn-reading', label: '学会阅读' },
+  { id: 'individual-diff', label: '个体差异' },
+  { id: 'overall', label: '总体对比' },
+]
+
+export const MODULE_MAPPING: Record<string, TabId> = {
+  '爱上阅读': 'love-reading',
+  '学会阅读': 'learn-reading',
+  '个体差异': 'individual-diff',
 }

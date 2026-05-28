@@ -1,19 +1,19 @@
 ## Wave 1: 基础设置：依赖与类型
 
-- [ ] 1.1 [S] 更新依赖：移除 xlsx，新增 jszip
-- [ ] 1.2 [S] 定义三层类型系统（ParsedDocument / AggregatedModule / ChartBlock）
-- [ ] 1.3 [S] 清理旧代码：删除 useExcelParser.ts 及 Excel 相关引用
+- [x] 1.1 [S] 更新依赖：移除 xlsx，新增 jszip <!-- time: started=2026-05-28T14:16:51.331Z, completed=2026-05-28T14:30:56.047Z, duration=845s -->
+- [x] 1.2 [S] 定义三层类型系统（ParsedDocument / AggregatedModule / ChartBlock） <!-- time: started=2026-05-28T14:16:51.331Z, completed=2026-05-28T14:30:56.047Z, duration=845s -->
+- [x] 1.3 [S] 清理旧代码：删除 useExcelParser.ts 及 Excel 相关引用 <!-- time: started=2026-05-28T14:16:51.331Z, completed=2026-05-28T14:30:56.047Z, duration=845s -->
 
 ## Wave 2: 核心逻辑：解析与聚合
 
-- [ ] 2.1 [L] 实现 useDocxParser composable（JSZip + DOMParser 解析 Word XML 表格）
-- [ ] 2.2 [L] 实现 useStatAggregation composable（多文档按模块/指标/等级聚合人数）
+- [x] 2.1 [L] 实现 useDocxParser composable（JSZip + DOMParser 解析 Word XML 表格） <!-- time: started=2026-05-28T14:39:19.358Z, completed=2026-05-28T14:39:19.358Z, duration=0s -->
+- [x] 2.2 [L] 实现 useStatAggregation composable（多文档按模块/指标/等级聚合人数） <!-- time: started=2026-05-28T14:39:19.358Z, completed=2026-05-28T14:39:19.358Z, duration=0s -->
 
 ## Wave 3: UI 组件开发
 
-- [ ] 3.1 [M] 实现 GroupUpload 组件（双入口：创新组/传统组，各支持多文件上传）
-- [ ] 3.2 [M] 实现 TabBar 组件（4 Tab 切换：爱上阅读/学会阅读/个体差异/总体对比）
-- [ ] 3.3 [M] 重构 useChartOptions composable 适配动态等级标签
+- [x] 3.1 [M] 实现 GroupUpload 组件（双入口：创新组/传统组，各支持多文件上传） <!-- time: started=2026-05-28T15:06:58.692Z, completed=2026-05-28T15:07:07.304Z, duration=9s -->
+- [x] 3.2 [M] 实现 TabBar 组件（4 Tab 切换：爱上阅读/学会阅读/个体差异/总体对比） <!-- time: started=2026-05-28T15:06:58.692Z, completed=2026-05-28T15:07:07.304Z, duration=9s -->
+- [x] 3.3 [M] 重构 useChartOptions composable 适配动态等级标签 <!-- time: started=2026-05-28T15:06:58.692Z, completed=2026-05-28T15:09:28.643Z, duration=150s -->
 
 ## Wave 4: 集成与组装
 
