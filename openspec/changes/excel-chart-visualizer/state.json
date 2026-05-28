@@ -2,10 +2,10 @@
   "change": {
     "change_id": "excel-chart-visualizer",
     "schema_version": 2,
-    "lifecycle": "executing",
+    "lifecycle": "completed",
     "active_agent": "openspec-executor",
     "created_at": "2026-05-28T07:33:24.662Z",
-    "updated_at": "2026-05-28T08:33:48.669Z",
+    "updated_at": "2026-05-28T08:49:28.138Z",
     "worktree_path": null
   },
   "planner": {
@@ -157,7 +157,7 @@
         "started_at": "2026-05-28T08:27:11.340Z",
         "completed_at": "2026-05-28T08:33:48.342Z",
         "duration_ms": 397002,
-        "commit_hash": "703a0ed"
+        "commit_hash": "c6d45ed"
       },
       {
         "task_id": "F2",
@@ -168,7 +168,7 @@
         "started_at": "2026-05-28T08:27:11.340Z",
         "completed_at": "2026-05-28T08:33:48.342Z",
         "duration_ms": 397002,
-        "commit_hash": "703a0ed"
+        "commit_hash": "c6d45ed"
       },
       {
         "task_id": "F3",
@@ -179,7 +179,7 @@
         "started_at": "2026-05-28T08:27:11.340Z",
         "completed_at": "2026-05-28T08:33:48.342Z",
         "duration_ms": 397002,
-        "commit_hash": "703a0ed"
+        "commit_hash": "c6d45ed"
       },
       {
         "task_id": "F4",
@@ -190,7 +190,7 @@
         "started_at": "2026-05-28T08:27:11.340Z",
         "completed_at": "2026-05-28T08:33:48.342Z",
         "duration_ms": 397002,
-        "commit_hash": "703a0ed"
+        "commit_hash": "c6d45ed"
       }
     ],
     "waves": [
@@ -243,7 +243,7 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T08:33:48.420Z"
+      "last_rendered_at": "2026-05-28T08:49:28.137Z"
     },
     "execution_summary": {
       "current_wave": null,
@@ -252,8 +252,8 @@
       "completed_tasks": 15,
       "status": "change-complete",
       "awaiting_user_review": false,
-      "awaiting_user_approval": true,
-      "awaiting_approval_since": "2026-05-28T08:33:48.669Z",
+      "awaiting_user_approval": false,
+      "awaiting_approval_since": null,
       "idle_stop_until": null
     },
     "reviews": [],
@@ -265,6 +265,6 @@
     ],
     "started_at": null,
     "total_duration_ms": 0,
-    "final_wave_confirmed": false
+    "final_wave_confirmed": true
   }
 }
