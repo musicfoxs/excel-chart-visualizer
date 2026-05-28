@@ -18,8 +18,8 @@
 
 ## Wave 4: 集成组装与部署配置
 
-- [ ] 4.1 [M] 组装 App.vue 根组件（深色背景 + 粒子 + 上传 + 图表网格）
-- [ ] 4.2 [S] 配置 Cloudflare Pages 部署（_redirects + README）
+- [x] 4.1 [M] 组装 App.vue 根组件（深色背景 + 粒子 + 上传 + 图表网格） <!-- time: started=2026-05-28T08:22:47.204Z, completed=2026-05-28T08:26:37.873Z, duration=231s -->
+- [x] 4.2 [S] 配置 Cloudflare Pages 部署（_redirects + README） <!-- time: started=2026-05-28T08:22:47.204Z, completed=2026-05-28T08:26:37.873Z, duration=231s -->
 
 ## Wave 5: 最终验证
 

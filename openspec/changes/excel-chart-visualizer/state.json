@@ -5,7 +5,7 @@
     "lifecycle": "executing",
     "active_agent": "openspec-executor",
     "created_at": "2026-05-28T07:33:24.662Z",
-    "updated_at": "2026-05-28T08:22:15.514Z",
+    "updated_at": "2026-05-28T08:26:37.921Z",
     "worktree_path": null
   },
   "planner": {
@@ -131,22 +131,22 @@
         "wave": 4,
         "size": "M",
         "title": "组装 App.vue 根组件（深色背景 + 粒子 + 上传 + 图表网格）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:22:47.204Z",
+        "completed_at": "2026-05-28T08:26:37.873Z",
+        "duration_ms": 230669,
+        "commit_hash": "74c2c5f"
       },
       {
         "task_id": "4.2",
         "wave": 4,
         "size": "S",
         "title": "配置 Cloudflare Pages 部署（_redirects + README）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:22:47.204Z",
+        "completed_at": "2026-05-28T08:26:37.873Z",
+        "duration_ms": 230669,
+        "commit_hash": "74c2c5f"
       },
       {
         "task_id": "F1",
@@ -243,13 +243,13 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T08:22:15.514Z"
+      "last_rendered_at": "2026-05-28T08:26:37.921Z"
     },
     "execution_summary": {
-      "current_wave": 4,
+      "current_wave": 5,
       "current_task": null,
       "total_tasks": 15,
-      "completed_tasks": 9,
+      "completed_tasks": 11,
       "status": "in-progress",
       "awaiting_user_review": false,
       "awaiting_user_approval": false,
