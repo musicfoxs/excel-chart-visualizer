@@ -44,11 +44,6 @@ const currentChartBlock = computed<ChartBlock | null>(() => {
   })
   return block ?? null
 })
-  if (block) {
-    console.log('[DEBUG] chartBlock:', JSON.stringify(block, null, 2))
-  }
-  return block ?? null
-})
 
 // Handlers
 const handleFilesSelected = async (group: GroupType, files: File[]) => {
