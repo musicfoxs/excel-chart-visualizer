@@ -51,8 +51,8 @@ export function useChartOptions() {
         left: '3%',
         right: '4%',
         top: 36,
-        bottom: '3%',
-        containLabel: true
+        bottom: 60,
+        containLabel: false
       },
       xAxis: {
         type: 'category',
@@ -63,7 +63,16 @@ export function useChartOptions() {
           }
         },
         axisLabel: {
-          color: 'rgba(255, 255, 255, 0.7)'
+          color: 'rgba(255, 255, 255, 0.7)',
+          rotate: 30,
+          interval: 0,
+          fontSize: 11,
+          overflow: 'truncate',
+          width: 80,
+          ellipsis: '...'
+        },
+        axisTick: {
+          alignWithLabel: true
         }
       },
       yAxis: {

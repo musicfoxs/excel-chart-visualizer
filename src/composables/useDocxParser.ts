@@ -35,24 +35,27 @@ const extractCellText = (tc: Element): string => {
 
   for (const p of paragraphs) {
     let lineParts: string[] = []
-    for (const child of Array.from(p.childNodes)) {
-      if (child.nodeType !== Node.ELEMENT_NODE) continue
-      const el = child as Element
-      const localName = el.localName
+    const runs = getElements(p, 'r')
 
-      if (localName === 'r') {
-        const tElements = getElements(el, 't')
-        for (const t of tElements) {
-          lineParts.push(t.textContent ?? '')
-        }
-      } else if (localName === 'br') {
-        const brType = getAttr(el, 'type')
-        if (brType === 'textWrapping' || brType === null) {
-          parts.push(lineParts.join(''))
-          lineParts = []
+    for (const r of runs) {
+      // 在 w:r 内部，w:br 可能在 w:t 之间，需要按顺序处理
+      for (const child of Array.from(r.childNodes)) {
+        if (child.nodeType !== Node.ELEMENT_NODE) continue
+        const el = child as Element
+        const localName = el.localName
+
+        if (localName === 't') {
+          lineParts.push(el.textContent ?? '')
+        } else if (localName === 'br') {
+          const brType = getAttr(el, 'type')
+          if (brType === 'textWrapping' || brType === null) {
+            parts.push(lineParts.join(''))
+            lineParts = []
+          }
         }
       }
     }
+
     parts.push(lineParts.join(''))
   }
 
