@@ -5,9 +5,9 @@
 
 ## Wave 2: 核心逻辑层（类型 + 解析 + 图表配置）
 
-- [ ] 2.1 [M] 定义核心类型（DataBlock, ChartData）和全局样式
-- [ ] 2.2 [M] 实现 useExcelParser composable（SheetJS 解析逻辑）
-- [ ] 2.3 [M] 实现 useChartOptions composable（ECharts 渐变/发光/动画配置生成器）
+- [x] 2.1 [M] 定义核心类型（DataBlock, ChartData）和全局样式 <!-- time: started=2026-05-28T08:05:32.794Z, completed=2026-05-28T08:14:20.720Z, duration=528s -->
+- [x] 2.2 [M] 实现 useExcelParser composable（SheetJS 解析逻辑） <!-- time: started=2026-05-28T08:05:32.794Z, completed=2026-05-28T08:14:20.720Z, duration=528s -->
+- [x] 2.3 [M] 实现 useChartOptions composable（ECharts 渐变/发光/动画配置生成器） <!-- time: started=2026-05-28T08:05:32.794Z, completed=2026-05-28T08:14:20.720Z, duration=528s -->
 
 ## Wave 3: UI 组件层（粒子 + 上传 + 卡片 + 标题）
 

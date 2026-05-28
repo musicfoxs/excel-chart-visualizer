@@ -5,7 +5,7 @@
     "lifecycle": "executing",
     "active_agent": "openspec-executor",
     "created_at": "2026-05-28T07:33:24.662Z",
-    "updated_at": "2026-05-28T08:04:54.573Z",
+    "updated_at": "2026-05-28T08:14:20.746Z",
     "worktree_path": null
   },
   "planner": {
@@ -54,33 +54,33 @@
         "wave": 2,
         "size": "M",
         "title": "定义核心类型（DataBlock, ChartData）和全局样式",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:05:32.794Z",
+        "completed_at": "2026-05-28T08:14:20.720Z",
+        "duration_ms": 527926,
+        "commit_hash": "e9f841e"
       },
       {
         "task_id": "2.2",
         "wave": 2,
         "size": "M",
         "title": "实现 useExcelParser composable（SheetJS 解析逻辑）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:05:32.794Z",
+        "completed_at": "2026-05-28T08:14:20.720Z",
+        "duration_ms": 527926,
+        "commit_hash": "e9f841e"
       },
       {
         "task_id": "2.3",
         "wave": 2,
         "size": "M",
         "title": "实现 useChartOptions composable（ECharts 渐变/发光/动画配置生成器）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:05:32.794Z",
+        "completed_at": "2026-05-28T08:14:20.720Z",
+        "duration_ms": 527926,
+        "commit_hash": "e9f841e"
       },
       {
         "task_id": "3.1",
@@ -243,13 +243,13 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T08:04:54.573Z"
+      "last_rendered_at": "2026-05-28T08:14:20.746Z"
     },
     "execution_summary": {
-      "current_wave": 2,
+      "current_wave": 3,
       "current_task": null,
       "total_tasks": 15,
-      "completed_tasks": 2,
+      "completed_tasks": 5,
       "status": "in-progress",
       "awaiting_user_review": false,
       "awaiting_user_approval": false,
