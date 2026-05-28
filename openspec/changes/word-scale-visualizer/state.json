@@ -5,7 +5,7 @@
     "lifecycle": "planning",
     "active_agent": null,
     "created_at": "2026-05-28T14:02:01.456Z",
-    "updated_at": "2026-05-28T15:09:28.672Z",
+    "updated_at": "2026-05-28T15:10:06.609Z",
     "worktree_path": null
   },
   "planner": {
@@ -120,8 +120,8 @@
         "wave": 4,
         "size": "L",
         "title": "重构 App.vue 整合所有新组件（双入口上传 + TabBar + 模块图表 + 总体对比）",
-        "status": "pending",
-        "started_at": null,
+        "status": "in-progress",
+        "started_at": "2026-05-28T15:10:06.607Z",
         "completed_at": null,
         "duration_ms": null,
         "commit_hash": null
@@ -131,8 +131,8 @@
         "wave": 4,
         "size": "M",
         "title": "重构 ChartCard 组件适配动态等级标签图表渲染",
-        "status": "pending",
-        "started_at": null,
+        "status": "in-progress",
+        "started_at": "2026-05-28T15:10:06.607Z",
         "completed_at": null,
         "duration_ms": null,
         "commit_hash": null
@@ -142,8 +142,8 @@
         "wave": 4,
         "size": "S",
         "title": "更新 FileUpload 组件（移除 Excel 相关逻辑，调整 accept 和提示文案）",
-        "status": "pending",
-        "started_at": null,
+        "status": "in-progress",
+        "started_at": "2026-05-28T15:10:06.607Z",
         "completed_at": null,
         "duration_ms": null,
         "commit_hash": null
@@ -243,11 +243,11 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T15:09:28.672Z"
+      "last_rendered_at": "2026-05-28T15:10:06.609Z"
     },
     "execution_summary": {
       "current_wave": 4,
-      "current_task": null,
+      "current_task": "4.1",
       "total_tasks": 15,
       "completed_tasks": 8,
       "status": "in-progress",

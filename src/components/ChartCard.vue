@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import echarts from '@/echarts'
-import type { DataBlock } from '@/types'
+import type { ChartIndicator } from '@/types'
 import { useChartOptions } from '@/composables/useChartOptions'
 
 const props = defineProps<{
-  block: DataBlock
+  indicator: ChartIndicator
 }>()
 
 const chartRef = ref<HTMLDivElement | null>(null)
-const { generateOptions } = useChartOptions()
+const { generateIndicatorOptions } = useChartOptions()
 let chartInstance: echarts.ECharts | null = null
 let resizeObserver: ResizeObserver | null = null
 
@@ -20,14 +20,14 @@ const initChart = () => {
     renderer: 'canvas'
   })
 
-  const options = generateOptions(props.block)
+  const options = generateIndicatorOptions(props.indicator)
   chartInstance.setOption(options)
 }
 
 const updateChart = () => {
   if (!chartInstance) return
 
-  const options = generateOptions(props.block)
+  const options = generateIndicatorOptions(props.indicator)
   chartInstance.setOption(options)
 }
 
@@ -48,7 +48,7 @@ onMounted(() => {
 })
 
 watch(
-  () => props.block,
+  () => props.indicator,
   () => {
     updateChart()
   },
@@ -70,7 +70,7 @@ onUnmounted(() => {
 
 <template>
   <div class="chart-card glass-card fade-in-up">
-    <h3 class="chart-title">{{ block.title }}</h3>
+    <h3 class="chart-title">{{ indicator.name }}</h3>
     <div ref="chartRef" class="chart-container"></div>
   </div>
 </template>

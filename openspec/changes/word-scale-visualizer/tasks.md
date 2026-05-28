@@ -17,9 +17,9 @@
 
 ## Wave 4: 集成与组装
 
-- [ ] 4.1 [L] 重构 App.vue 整合所有新组件（双入口上传 + TabBar + 模块图表 + 总体对比）
-- [ ] 4.2 [M] 重构 ChartCard 组件适配动态等级标签图表渲染
-- [ ] 4.3 [S] 更新 FileUpload 组件（移除 Excel 相关逻辑，调整 accept 和提示文案）
+- [/] 4.1 [L] 重构 App.vue 整合所有新组件（双入口上传 + TabBar + 模块图表 + 总体对比） <!-- time: started=2026-05-28T15:10:06.607Z -->
+- [/] 4.2 [M] 重构 ChartCard 组件适配动态等级标签图表渲染 <!-- time: started=2026-05-28T15:10:06.607Z -->
+- [/] 4.3 [S] 更新 FileUpload 组件（移除 Excel 相关逻辑，调整 accept 和提示文案） <!-- time: started=2026-05-28T15:10:06.607Z -->
 
 ## Wave 5: 最终验证
 

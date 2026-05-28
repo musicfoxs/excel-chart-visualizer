@@ -1,19 +1,83 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import ParticleBackground from '@/components/ParticleBackground.vue'
 import NeonTitle from '@/components/NeonTitle.vue'
-import FileUpload from '@/components/FileUpload.vue'
+import GroupUpload from '@/components/GroupUpload.vue'
+import TabBar from '@/components/TabBar.vue'
 import ChartCard from '@/components/ChartCard.vue'
-import { useExcelParser } from '@/composables/useExcelParser'
+import { useDocxParser } from '@/composables/useDocxParser'
+import { useStatAggregation } from '@/composables/useStatAggregation'
+import type { ParsedDocument, GroupType, TabId, ChartBlock } from '@/types'
+import { MODULE_MAPPING } from '@/types'
 
-const { result, parseFile } = useExcelParser()
+// Composables
+const { parseFile } = useDocxParser()
+const { aggregate, toChartBlocks, toOverallChartBlock } = useStatAggregation()
 
-const isLoading = computed(() => result.value.status === 'loading')
-const errorMessage = computed(() => result.value.error)
-const hasData = computed(() => result.value.status === 'success' && result.value.data.length > 0)
+// State
+const innovativeFiles = ref<File[]>([])
+const traditionalFiles = ref<File[]>([])
+const parsedDocuments = ref<ParsedDocument[]>([])
+const activeTab = ref<TabId>('love-reading')
+const loading = ref(false)
+const errors = ref<{ innovative: string | null; traditional: string | null }>({
+  innovative: null,
+  traditional: null
+})
 
-const handleFileSelected = (file: File) => {
-  parseFile(file)
+// Aggregated data
+const aggregatedModules = computed(() => aggregate(parsedDocuments.value))
+const chartBlocks = computed(() => toChartBlocks(aggregatedModules.value))
+const overallChartBlock = computed(() => toOverallChartBlock(aggregatedModules.value))
+
+const hasData = computed(() => parsedDocuments.value.length > 0)
+
+// Current tab's chart block
+const currentChartBlock = computed<ChartBlock | null>(() => {
+  if (!hasData.value) return null
+  if (activeTab.value === 'overall') return overallChartBlock.value
+  // Find the matching module (use prefix match since module names may contain suffixes like "（阅读兴趣）")
+  const block = chartBlocks.value.find(b => {
+    const matchedTabId = MODULE_MAPPING[b.title] ?? 
+      Object.entries(MODULE_MAPPING).find(([key]) => b.title.startsWith(key))?.[1]
+    return matchedTabId === activeTab.value
+  })
+  return block ?? null
+})
+
+// Handlers
+const handleFilesSelected = async (group: GroupType, files: File[]) => {
+  // Reset errors for this group
+  errors.value[group] = null
+
+  // Add files to the list
+  if (group === 'innovative') {
+    innovativeFiles.value = [...innovativeFiles.value, ...files]
+  } else {
+    traditionalFiles.value = [...traditionalFiles.value, ...files]
+  }
+
+  loading.value = true
+
+  try {
+    const newDocs: ParsedDocument[] = []
+    for (const file of files) {
+      try {
+        const doc = await parseFile(file, group)
+        newDocs.push(doc)
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : `解析文件 ${file.name} 失败`
+        errors.value[group] = msg
+      }
+    }
+    parsedDocuments.value = [...parsedDocuments.value, ...newDocs]
+  } finally {
+    loading.value = false
+  }
+}
+
+const handleTabChange = (tabId: TabId) => {
+  activeTab.value = tabId
 }
 </script>
 
@@ -21,25 +85,39 @@ const handleFileSelected = (file: File) => {
   <ParticleBackground />
   <div class="app-content">
     <header class="app-header">
-      <NeonTitle 
-        title="数据可视化大屏" 
-        subtitle="上传 Excel 文件以查看数据分布"
+      <NeonTitle
+        title="绘本阅读量表分析"
+        subtitle="上传 Word 评价量表文件以查看数据分布"
       />
     </header>
-    
+
     <main class="app-main">
-      <FileUpload 
-        :loading="isLoading"
-        :error="errorMessage"
-        @file-selected="handleFileSelected"
+      <GroupUpload
+        :loading="loading"
+        :errors="errors"
+        :innovative-files="innovativeFiles"
+        :traditional-files="traditionalFiles"
+        @files-selected="handleFilesSelected"
       />
-      
-      <div v-if="hasData" class="chart-grid">
-        <ChartCard 
-          v-for="block in result.data" 
-          :key="block.title" 
-          :block="block" 
+
+      <div v-if="hasData" class="data-section">
+        <TabBar
+          :active-tab="activeTab"
+          :disabled="false"
+          @tab-change="handleTabChange"
         />
+
+        <div v-if="currentChartBlock" class="chart-grid">
+          <ChartCard
+            v-for="indicator in currentChartBlock.indicators"
+            :key="indicator.name"
+            :indicator="indicator"
+          />
+        </div>
+      </div>
+
+      <div v-else class="empty-state">
+        <p>请上传 Word 评价量表文件（.docx 格式）</p>
       </div>
     </main>
   </div>
@@ -63,11 +141,22 @@ const handleFileSelected = (file: File) => {
   margin: 0 auto;
 }
 
+.data-section {
+  margin-top: 40px;
+}
+
 .chart-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-  margin-top: 40px;
+  margin-top: 24px;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 60px;
+  color: var(--text-secondary);
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
