@@ -42,6 +42,7 @@ export function useChartOptions() {
       },
       legend: {
         data: ['传统组', '创新组'],
+        top: 0,
         textStyle: {
           color: 'rgba(255, 255, 255, 0.7)'
         }
@@ -49,6 +50,7 @@ export function useChartOptions() {
       grid: {
         left: '3%',
         right: '4%',
+        top: 36,
         bottom: '3%',
         containLabel: true
       },
@@ -87,6 +89,13 @@ export function useChartOptions() {
           type: 'bar',
           barGap: '30%',
           data: block.traditional,
+          label: {
+            show: true,
+            position: 'top',
+            color: 'rgba(255, 255, 255, 0.8)',
+            fontSize: 12,
+            fontWeight: 'bold'
+          },
           itemStyle: {
             color: traditionalGradient,
             shadowColor: 'rgba(168, 85, 247, 0.6)',
@@ -104,6 +113,13 @@ export function useChartOptions() {
           name: '创新组',
           type: 'bar',
           data: block.innovative,
+          label: {
+            show: true,
+            position: 'top',
+            color: 'rgba(255, 255, 255, 0.8)',
+            fontSize: 12,
+            fontWeight: 'bold'
+          },
           itemStyle: {
             color: innovativeGradient,
             shadowColor: 'rgba(244, 114, 182, 0.6)',

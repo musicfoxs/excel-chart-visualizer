@@ -1,0 +1,15 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - heading "数据可视化大屏" [level=1] [ref=e6]
+      - paragraph [ref=e7]: 上传 Excel 文件以查看数据分布
+  - main [ref=e8]:
+    - generic [ref=e14] [cursor=pointer]:
+      - generic [ref=e15]: 📊
+      - paragraph [ref=e16]: 拖拽 Excel 文件到此处，或点击上传
+      - paragraph [ref=e17]: 仅支持 .xlsx 格式
+    - generic [ref=e18]:
+      - heading "1. 主动参与情况 人数分布" [level=3] [ref=e20]
+      - heading "2. 积极情绪表现 人数分布" [level=3] [ref=e25]
+      - heading "3. 同伴分享行为 人数分布" [level=3] [ref=e30]
+      - heading "4. 活动后延续兴趣 人数分布" [level=3] [ref=e35]

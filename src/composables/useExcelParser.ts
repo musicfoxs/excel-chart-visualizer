@@ -43,6 +43,7 @@ export function useExcelParser() {
 
       const dataBlocks: DataBlock[] = []
       let currentBlock: DataBlock | null = null
+      let skipNextRow = false
 
       for (let i = 0; i < jsonData.length; i++) {
         const row = jsonData[i]
@@ -59,6 +60,9 @@ export function useExcelParser() {
             traditional: [],
             innovative: []
           }
+          skipNextRow = true
+        } else if (skipNextRow && currentBlock) {
+          skipNextRow = false
         } else if (currentBlock && firstCell) {
           currentBlock.labels.push(firstCell)
           
