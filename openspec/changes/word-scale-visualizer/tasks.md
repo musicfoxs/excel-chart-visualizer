@@ -17,13 +17,13 @@
 
 ## Wave 4: 集成与组装
 
-- [/] 4.1 [L] 重构 App.vue 整合所有新组件（双入口上传 + TabBar + 模块图表 + 总体对比） <!-- time: started=2026-05-28T15:10:06.607Z -->
-- [/] 4.2 [M] 重构 ChartCard 组件适配动态等级标签图表渲染 <!-- time: started=2026-05-28T15:10:06.607Z -->
-- [/] 4.3 [S] 更新 FileUpload 组件（移除 Excel 相关逻辑，调整 accept 和提示文案） <!-- time: started=2026-05-28T15:10:06.607Z -->
+- [x] 4.1 [L] 重构 App.vue 整合所有新组件（双入口上传 + TabBar + 模块图表 + 总体对比） <!-- time: started=2026-05-28T15:10:06.607Z, completed=2026-05-28T15:16:16.625Z, duration=370s -->
+- [x] 4.2 [M] 重构 ChartCard 组件适配动态等级标签图表渲染 <!-- time: started=2026-05-28T15:10:06.607Z, completed=2026-05-28T15:16:16.625Z, duration=370s -->
+- [x] 4.3 [S] 更新 FileUpload 组件（移除 Excel 相关逻辑，调整 accept 和提示文案） <!-- time: started=2026-05-28T15:10:06.607Z, completed=2026-05-28T15:16:16.625Z, duration=370s -->
 
 ## Wave 5: 最终验证
 
-- [ ] F1 [M] Artifacts Compliance Audit — 对照 design → Verification → Acceptance Criteria 的 AC-1~AC-5 逐条验证实现完整性 + openspec validate --changes --strict
-- [ ] F2 [M] Code Quality Review — typecheck + test + AI slop 检查
-- [ ] F3 [M] Integration QA — 执行 design → Verification → E2E Test Design 中的 4 个必测场景 + 跨模块集成 + 边界测试
-- [ ] F4 [M] Scope Fidelity Check — 验证 design → Verification → Boundary Verification 表格中 6 项 Non-goals 未被引入 + git diff vs tasks 1:1 对齐 + 跨任务污染检测
+- [x] F1 [M] Artifacts Compliance Audit — 对照 design → Verification → Acceptance Criteria 的 AC-1~AC-5 逐条验证实现完整性 + openspec validate --changes --strict <!-- time: started=2026-05-28T15:22:21.710Z, completed=2026-05-28T15:22:21.710Z, duration=0s -->
+- [x] F2 [M] Code Quality Review — typecheck + test + AI slop 检查 <!-- time: started=2026-05-28T15:22:21.710Z, completed=2026-05-28T15:22:21.710Z, duration=0s -->
+- [x] F3 [M] Integration QA — 执行 design → Verification → E2E Test Design 中的 4 个必测场景 + 跨模块集成 + 边界测试 <!-- time: started=2026-05-28T15:22:21.710Z, completed=2026-05-28T15:22:21.710Z, duration=0s -->
+- [x] F4 [M] Scope Fidelity Check — 验证 design → Verification → Boundary Verification 表格中 6 项 Non-goals 未被引入 + git diff vs tasks 1:1 对齐 + 跨任务污染检测 <!-- time: started=2026-05-28T15:22:21.710Z, completed=2026-05-28T15:22:21.710Z, duration=0s -->

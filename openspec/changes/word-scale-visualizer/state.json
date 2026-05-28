@@ -5,7 +5,7 @@
     "lifecycle": "planning",
     "active_agent": null,
     "created_at": "2026-05-28T14:02:01.456Z",
-    "updated_at": "2026-05-28T15:10:06.609Z",
+    "updated_at": "2026-05-28T15:22:21.743Z",
     "worktree_path": null
   },
   "planner": {
@@ -120,77 +120,77 @@
         "wave": 4,
         "size": "L",
         "title": "重构 App.vue 整合所有新组件（双入口上传 + TabBar + 模块图表 + 总体对比）",
-        "status": "in-progress",
+        "status": "completed",
         "started_at": "2026-05-28T15:10:06.607Z",
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "completed_at": "2026-05-28T15:16:16.625Z",
+        "duration_ms": 370018,
+        "commit_hash": "9634b51"
       },
       {
         "task_id": "4.2",
         "wave": 4,
         "size": "M",
         "title": "重构 ChartCard 组件适配动态等级标签图表渲染",
-        "status": "in-progress",
+        "status": "completed",
         "started_at": "2026-05-28T15:10:06.607Z",
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "completed_at": "2026-05-28T15:16:16.625Z",
+        "duration_ms": 370018,
+        "commit_hash": "9634b51"
       },
       {
         "task_id": "4.3",
         "wave": 4,
         "size": "S",
         "title": "更新 FileUpload 组件（移除 Excel 相关逻辑，调整 accept 和提示文案）",
-        "status": "in-progress",
+        "status": "completed",
         "started_at": "2026-05-28T15:10:06.607Z",
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "completed_at": "2026-05-28T15:16:16.625Z",
+        "duration_ms": 370018,
+        "commit_hash": "9634b51"
       },
       {
         "task_id": "F1",
         "wave": 5,
         "size": "M",
         "title": "Artifacts Compliance Audit — 对照 design → Verification → Acceptance Criteria 的 AC-1~AC-5 逐条验证实现完整性 + openspec validate --changes --strict",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T15:22:21.710Z",
+        "completed_at": "2026-05-28T15:22:21.710Z",
+        "duration_ms": 0,
+        "commit_hash": "4f90b2a"
       },
       {
         "task_id": "F2",
         "wave": 5,
         "size": "M",
         "title": "Code Quality Review — typecheck + test + AI slop 检查",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T15:22:21.710Z",
+        "completed_at": "2026-05-28T15:22:21.710Z",
+        "duration_ms": 0,
+        "commit_hash": "4f90b2a"
       },
       {
         "task_id": "F3",
         "wave": 5,
         "size": "M",
         "title": "Integration QA — 执行 design → Verification → E2E Test Design 中的 4 个必测场景 + 跨模块集成 + 边界测试",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T15:22:21.710Z",
+        "completed_at": "2026-05-28T15:22:21.710Z",
+        "duration_ms": 0,
+        "commit_hash": "4f90b2a"
       },
       {
         "task_id": "F4",
         "wave": 5,
         "size": "M",
         "title": "Scope Fidelity Check — 验证 design → Verification → Boundary Verification 表格中 6 项 Non-goals 未被引入 + git diff vs tasks 1:1 对齐 + 跨任务污染检测",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T15:22:21.710Z",
+        "completed_at": "2026-05-28T15:22:21.710Z",
+        "duration_ms": 0,
+        "commit_hash": "4f90b2a"
       }
     ],
     "waves": [
@@ -243,15 +243,15 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T15:10:06.609Z"
+      "last_rendered_at": "2026-05-28T15:22:21.743Z"
     },
     "execution_summary": {
-      "current_wave": 4,
-      "current_task": "4.1",
+      "current_wave": null,
+      "current_task": null,
       "total_tasks": 15,
-      "completed_tasks": 8,
-      "status": "in-progress",
-      "awaiting_user_review": false,
+      "completed_tasks": 15,
+      "status": "change-complete",
+      "awaiting_user_review": true,
       "awaiting_user_approval": false,
       "awaiting_approval_since": null,
       "idle_stop_until": null
