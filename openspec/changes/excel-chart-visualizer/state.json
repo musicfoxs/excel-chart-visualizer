@@ -2,10 +2,10 @@
   "change": {
     "change_id": "excel-chart-visualizer",
     "schema_version": 2,
-    "lifecycle": "planning",
-    "active_agent": null,
+    "lifecycle": "executing",
+    "active_agent": "openspec-executor",
     "created_at": "2026-05-28T07:33:24.662Z",
-    "updated_at": "2026-05-28T07:51:53.449Z",
+    "updated_at": "2026-05-28T08:04:54.573Z",
     "worktree_path": null
   },
   "planner": {
@@ -32,22 +32,22 @@
         "wave": 1,
         "size": "S",
         "title": "初始化 Vue 3 + TypeScript + Vite 项目并安装依赖（含 ECharts 按需引入配置）",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T07:55:04.035Z",
+        "completed_at": "2026-05-28T08:02:45.053Z",
+        "duration_ms": 461018,
+        "commit_hash": "e1a9163"
       },
       {
         "task_id": "1.2",
         "wave": 1,
         "size": "S",
         "title": "配置 TypeScript 严格模式和 Vite 构建选项",
-        "status": "pending",
-        "started_at": null,
-        "completed_at": null,
-        "duration_ms": null,
-        "commit_hash": null
+        "status": "completed",
+        "started_at": "2026-05-28T08:02:45.053Z",
+        "completed_at": "2026-05-28T08:04:54.544Z",
+        "duration_ms": 129491,
+        "commit_hash": "e1a9163"
       },
       {
         "task_id": "2.1",
@@ -243,14 +243,14 @@
     "view": {
       "in_sync": true,
       "last_verified_at": null,
-      "last_rendered_at": "2026-05-28T07:45:17.199Z"
+      "last_rendered_at": "2026-05-28T08:04:54.573Z"
     },
     "execution_summary": {
-      "current_wave": 1,
+      "current_wave": 2,
       "current_task": null,
       "total_tasks": 15,
-      "completed_tasks": 0,
-      "status": "not-started",
+      "completed_tasks": 2,
+      "status": "in-progress",
       "awaiting_user_review": false,
       "awaiting_user_approval": false,
       "awaiting_approval_since": null,
@@ -260,7 +260,9 @@
     "wave_token_summaries": [],
     "wave_durations": [],
     "task_durations": [],
-    "session_ids": [],
+    "session_ids": [
+      "ses_1928b1f8affeinR3aCGKJGAJq1"
+    ],
     "started_at": null,
     "total_duration_ms": 0,
     "final_wave_confirmed": false

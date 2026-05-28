@@ -1,7 +1,7 @@
 ## Wave 1: 项目初始化与依赖安装
 
-- [ ] 1.1 [S] 初始化 Vue 3 + TypeScript + Vite 项目并安装依赖（含 ECharts 按需引入配置）
-- [ ] 1.2 [S] 配置 TypeScript 严格模式和 Vite 构建选项
+- [x] 1.1 [S] 初始化 Vue 3 + TypeScript + Vite 项目并安装依赖（含 ECharts 按需引入配置） <!-- time: started=2026-05-28T07:55:04.035Z, completed=2026-05-28T08:02:45.053Z, duration=461s -->
+- [x] 1.2 [S] 配置 TypeScript 严格模式和 Vite 构建选项 <!-- time: started=2026-05-28T08:02:45.053Z, completed=2026-05-28T08:04:54.544Z, duration=129s -->
 
 ## Wave 2: 核心逻辑层（类型 + 解析 + 图表配置）
 
