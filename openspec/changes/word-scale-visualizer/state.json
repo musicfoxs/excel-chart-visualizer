@@ -5,7 +5,7 @@
     "lifecycle": "planning",
     "active_agent": null,
     "created_at": "2026-05-28T14:02:01.456Z",
-    "updated_at": "2026-05-28T15:22:21.743Z",
+    "updated_at": "2026-06-03T06:31:42.667Z",
     "worktree_path": null
   },
   "planner": {
@@ -251,9 +251,9 @@
       "total_tasks": 15,
       "completed_tasks": 15,
       "status": "change-complete",
-      "awaiting_user_review": true,
-      "awaiting_user_approval": false,
-      "awaiting_approval_since": null,
+      "awaiting_user_review": false,
+      "awaiting_user_approval": true,
+      "awaiting_approval_since": "2026-06-03T06:31:42.664Z",
       "idle_stop_until": null
     },
     "reviews": [],
