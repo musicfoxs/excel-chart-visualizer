@@ -23,3 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Test data and build artifacts
+创新/
+传统/
+*.docx
+_redirects
+.omo/
+.playwright-mcp/
